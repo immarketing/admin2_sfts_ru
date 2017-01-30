@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2139a563b9c7f28ed695ba06010122c",
-    "content-hash": "6434a16c368ed99fb4b0ec989b0e9928",
+    "hash": "f6833a8dfc07535a8e17ed9c93ef9ee7",
+    "content-hash": "c797a1897a4cf09b1cc9e33903db3ca1",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2436,6 +2436,65 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "crestapps/laravel-code-generator",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CrestApps/laravel-code-generator.git",
+                "reference": "3ed308e2b93ddf91f7824f90b95e7d924e6f85d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CrestApps/laravel-code-generator/zipball/3ed308e2b93ddf91f7824f90b95e7d924e6f85d1",
+                "reference": "3ed308e2b93ddf91f7824f90b95e7d924e6f85d1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CrestApps\\CodeGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Majd Alhayek (Mike)",
+                    "email": "mike@crestapps.com",
+                    "homepage": "https://www.crestapps.com"
+                }
+            ],
+            "description": "A clean code generator for Laravel framework that will save you time! This awesome tool will help you generate resources like views, controllers, routes, migrations, languages or request-forms! It is extremely flexible and customizable to cover many use cases. It is shipped with cross-browsers compatible template, along with a client-side validation to modernize your application.",
+            "keywords": [
+                "Alhayek",
+                "CrestApps",
+                "Majd Alhayek",
+                "Mike Alhayek",
+                "code generator",
+                "code-generator",
+                "controller creator",
+                "crud",
+                "crud builder",
+                "crud generator",
+                "generator",
+                "generators",
+                "laravel",
+                "laravel code generator",
+                "laravel crud",
+                "laravel crud builder",
+                "laravel crud generator",
+                "laravel-code-generator",
+                "routes creator",
+                "views creator"
+            ],
+            "time": "2017-01-30 01:22:43"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",

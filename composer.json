@@ -12,6 +12,7 @@
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
+        "crestapps/laravel-code-generator": "^1.1",
         "fzaninotto/faker": "~1.4",
         "ignasbernotas/laravel-model-generator": "^1.1",
         "mockery/mockery": "0.9.*",

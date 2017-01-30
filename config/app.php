@@ -177,6 +177,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Code Generator
+        // https://crestapps.com/laravel-code-generator/docs/1.1#demo
+        CrestApps\CodeGenerator\CodeGeneratorServiceProvider::class,
+
     ],
 
     /*
