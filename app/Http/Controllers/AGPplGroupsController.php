@@ -10,7 +10,11 @@ use App\Models\Agpplgroup;
 
 class AGPplGroupsController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the agpplgroups.
      *
@@ -18,7 +22,8 @@ class AGPplGroupsController extends Controller
      */
     public function index()
     {
-        $agpplgroups = Agpplgroup::paginate(25);
+        //$agpplgroups = Agpplgroup::paginate(25);
+        $agpplgroups = Agpplgroup::orderBy('name', 'asc')->paginate(25);
 
         return view('agpplgroup.index', compact('agpplgroups'));
     }
@@ -47,7 +52,7 @@ class AGPplGroupsController extends Controller
         
         Agpplgroup::create($data);
 
-        Session::flash('success_message', 'Agpplgroup was added!');
+        Session::flash('success_message', 'Группа была добавлена!');
 
         return redirect()->route('agpplgroup.agpplgroup.index');
     }
@@ -96,7 +101,7 @@ class AGPplGroupsController extends Controller
         
         $agpplgroup->update($data);
 
-        Session::flash('success_message', 'Agpplgroup was updated!');
+        Session::flash('success_message', 'Группа успешно отредактирована!');
 
         return redirect()->route('agpplgroup.agpplgroup.index');
     }
@@ -112,7 +117,7 @@ class AGPplGroupsController extends Controller
     {
         Agpplgroup::destroy($id);
 
-        Session::flash('success_message', 'Agpplgroup was deleted!');
+        Session::flash('success_message', 'Группа удалена!');
 
         return redirect()->route('agpplgroup.agpplgroup.index');
     }

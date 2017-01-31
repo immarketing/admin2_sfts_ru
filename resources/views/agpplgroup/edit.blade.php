@@ -7,16 +7,16 @@
         <div class="panel-heading clearfix">
 
             <span class="pull-left">
-                AGPplGroup {{ $agpplgroup->id }}
+                Группа обучающихся №{{ $agpplgroup->id }}
             </span>
 
             <div class="btn-group btn-group-xs pull-right" role="group">
 
-                <a href="{{ route('agpplgroup.agpplgroup.index') }}" class="btn btn-primary" title="Show all agpplgroups">
+                <a href="{{ route('agpplgroup.agpplgroup.index') }}" class="btn btn-primary" title="Показать полный список (без сохранения)">
                     <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                 </a>
 
-                <a href="{{ route('agpplgroup.agpplgroup.create') }}" class="btn btn-primary" title="Add AGPplGroup">
+                <a href="{{ route('agpplgroup.agpplgroup.create') }}" class="btn btn-primary" title="Добавить группу">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 </a>
 
@@ -37,7 +37,7 @@
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
             @include ('agpplgroup.form', [
-                                        'submitButtonLabel' => 'Update', 
+                                        'submitButtonLabel' => 'Обновить данные',
                                         'agpplgroup' => $agpplgroup,
                                       ])
             </form>

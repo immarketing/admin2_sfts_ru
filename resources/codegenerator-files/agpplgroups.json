@@ -9,7 +9,7 @@
         "options": {},
         "html-value": null,
         "validation": "",
-        "is-on-index": false,
+        "is-on-index": true,
         "is-on-show": false,
         "is-on-form": false,
         "data-type": "integer",
@@ -46,7 +46,7 @@
             10
         ],
         "data-value": null,
-        "is-index": false,
+        "is-index": true,
         "is-unique": true,
         "is-primary": false,
         "comment": null,

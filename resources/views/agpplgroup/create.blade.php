@@ -7,11 +7,11 @@
         <div class="panel-heading clearfix">
             
             <span class="pull-left">
-                Create New AGPplGroup
+                Создать новую группу обучающихся
             </span>
 
             <div class="btn-group btn-group-xs pull-right" role="group">
-                <a href="{{ route('agpplgroup.agpplgroup.index') }}" class="btn btn-primary" title="Show all agpplgroups">
+                <a href="{{ route('agpplgroup.agpplgroup.index') }}" class="btn btn-primary" title="Показать весь список (без сохранения)">
                     <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                 </a>
             </div>
