@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $dropDownDict = array (
-            array ("href"=>"#about", "text"=>"Группы"),
+            array ("href"=>"/agpplgroup/", "text"=>"Группы"),
             array ("href"=>"#courses", "text"=>"Студенты"),
             array ("href"=>"#contacts", "text"=>"Тесты"),
         );

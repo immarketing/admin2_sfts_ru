@@ -1,0 +1,93 @@
+[
+    {
+        "name": "id",
+        "labels": {
+            "en": "Id",
+            "ru": "Id"
+        },
+        "html-type": "text",
+        "options": {},
+        "html-value": null,
+        "validation": "",
+        "is-on-index": false,
+        "is-on-show": false,
+        "is-on-form": false,
+        "data-type": "integer",
+        "data-type-params": [],
+        "data-value": null,
+        "is-index": false,
+        "is-unique": false,
+        "is-primary": false,
+        "comment": null,
+        "is-nullable": true,
+        "is-unsiged": false,
+        "is-auto-increment": true,
+        "is-inline-options": false,
+        "is-multiple-answers": false,
+        "placeholder": "",
+        "delimiter": "; ",
+        "range": []
+    },
+    {
+        "name": "Code",
+        "labels": {
+            "en": "Code",
+            "ru": "Code"
+        },
+        "html-type": "text",
+        "options": {},
+        "html-value": null,
+        "validation": "max:10",
+        "is-on-index": true,
+        "is-on-show": true,
+        "is-on-form": true,
+        "data-type": "string",
+        "data-type-params": [
+            10
+        ],
+        "data-value": null,
+        "is-index": false,
+        "is-unique": true,
+        "is-primary": false,
+        "comment": null,
+        "is-nullable": true,
+        "is-unsiged": false,
+        "is-auto-increment": false,
+        "is-inline-options": false,
+        "is-multiple-answers": false,
+        "placeholder": "",
+        "delimiter": "; ",
+        "range": []
+    },
+    {
+        "name": "Name",
+        "labels": {
+            "en": "Name",
+            "ru": "Name"
+        },
+        "html-type": "text",
+        "options": {},
+        "html-value": null,
+        "validation": "max:200",
+        "is-on-index": true,
+        "is-on-show": true,
+        "is-on-form": true,
+        "data-type": "string",
+        "data-type-params": [
+            200
+        ],
+        "data-value": null,
+        "is-index": false,
+        "is-unique": false,
+        "is-primary": false,
+        "comment": null,
+        "is-nullable": true,
+        "is-unsiged": false,
+        "is-auto-increment": false,
+        "is-inline-options": false,
+        "is-multiple-answers": false,
+        "placeholder": "",
+        "delimiter": "; ",
+        "range": []
+    }
+]
