@@ -6,42 +6,35 @@ use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use App\Models\Agpplgroup;
+use App\Models\Agtest;
 
-class AGPplGroupsController extends Controller
+class AgTestsController extends Controller
 {
-    /*
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    */
-
+    
     /**
-     * Display a listing of the agpplgroups.
+     * Display a listing of the agtests.
      *
      * @return Illuminate\View\View
      */
     public function index()
     {
-        //$agpplgroups = Agpplgroup::paginate(25);
-        $agpplgroups = Agpplgroup::orderBy('name', 'asc')->paginate(25);
+        $agtests = Agtest::paginate(25);
 
-        return view('agpplgroup.index', compact('agpplgroups'));
+        return view('agtest.index', compact('agtests'));
     }
 
     /**
-     * Show the form for creating a new agpplgroup.
+     * Show the form for creating a new agtest.
      *
      * @return Illuminate\View\View
      */
     public function create()
     {
-        return view('agpplgroup.create');
+        return view('agtest.create');
     }
 
     /**
-     * Store a new agpplgroup in the storage.
+     * Store a new agtest in the storage.
      *
      * @param Illuminate\Http\Request $request
      *
@@ -52,15 +45,15 @@ class AGPplGroupsController extends Controller
         $this->affirm($request);
         $data = $request->all();
         
-        Agpplgroup::create($data);
+        Agtest::create($data);
 
-        Session::flash('success_message', 'Группа была добавлена!');
+        Session::flash('success_message', 'Agtest was added!');
 
-        return redirect()->route('agpplgroup.agpplgroup.index');
+        return redirect()->route('agtest.agtest.index');
     }
 
     /**
-     * Display the specified agpplgroup.
+     * Display the specified agtest.
      *
      * @param  int $id
      *
@@ -68,13 +61,13 @@ class AGPplGroupsController extends Controller
      */
     public function show($id)
     {
-        $agpplgroup = Agpplgroup::findOrFail($id);
+        $agtest = Agtest::findOrFail($id);
 
-        return view('agpplgroup.show', compact('agpplgroup'));
+        return view('agtest.show', compact('agtest'));
     }
 
     /**
-     * Show the form for editing the specified agpplgroup.
+     * Show the form for editing the specified agtest.
      *
      * @param  int $id
      *
@@ -82,13 +75,13 @@ class AGPplGroupsController extends Controller
      */
     public function edit($id)
     {
-        $agpplgroup = Agpplgroup::findOrFail($id);
+        $agtest = Agtest::findOrFail($id);
 
-        return view('agpplgroup.edit', compact('agpplgroup'));
+        return view('agtest.edit', compact('agtest'));
     }
 
     /**
-     * Update the specified agpplgroup in the storage.
+     * Update the specified agtest in the storage.
      *
      * @param  int $id
      * @param Illuminate\Http\Request $request
@@ -98,18 +91,18 @@ class AGPplGroupsController extends Controller
     public function update($id, Request $request)
     {
         $this->affirm($request);
-        $agpplgroup = Agpplgroup::findOrFail($id);
+        $agtest = Agtest::findOrFail($id);
         $data = $request->all();
         
-        $agpplgroup->update($data);
+        $agtest->update($data);
 
-        Session::flash('success_message', 'Группа успешно отредактирована!');
+        Session::flash('success_message', 'Agtest was updated!');
 
-        return redirect()->route('agpplgroup.agpplgroup.index');
+        return redirect()->route('agtest.agtest.index');
     }
 
     /**
-     * Remove the specified agpplgroup from the storage.
+     * Remove the specified agtest from the storage.
      *
      * @param  int $id
      *
@@ -117,11 +110,11 @@ class AGPplGroupsController extends Controller
      */
     public function destroy($id)
     {
-        Agpplgroup::destroy($id);
+        Agtest::destroy($id);
 
-        Session::flash('success_message', 'Группа удалена!');
+        Session::flash('success_message', 'Agtest was deleted!');
 
-        return redirect()->route('agpplgroup.agpplgroup.index');
+        return redirect()->route('agtest.agtest.index');
     }
 
     /**
@@ -134,8 +127,11 @@ class AGPplGroupsController extends Controller
     protected function affirm(Request $request)
     {
         return $this->validate($request, [
-            'Code' => 'max:10',
+            'ShortName' => 'max:100',
             'Name' => 'max:200',
+            'Code' => 'max:10',
+            'GoogleSheetID' => 'max:50',
+            'JSON' => 'max:2147483647',
                 
         ]);
 

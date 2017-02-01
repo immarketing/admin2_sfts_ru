@@ -17,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
         $dropDownDict = array (
             array ("href"=>"/agpplgroup/", "text"=>"Группы", "routeName"=>"agpplgroup.agpplgroup.index"),
             array ("href"=>"#courses", "text"=>"Студенты"),
-            array ("href"=>"#contacts", "text"=>"Тесты"),
+            array ("href"=>"#", "text"=>"Курсы", "routeName"=>'agcourse.agcourse.index'),
+            array ("href"=>"#", "text"=>"Тесты", "routeName"=>'agtest.agtest.index'),
+
         );
         $dropDownAct = array (
             array ("href"=>"#about", "text"=>"Действие 1"),

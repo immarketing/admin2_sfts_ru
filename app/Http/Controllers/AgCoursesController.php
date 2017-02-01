@@ -6,42 +6,35 @@ use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use App\Models\Agpplgroup;
+use App\Models\Agcourse;
 
-class AGPplGroupsController extends Controller
+class AgCoursesController extends Controller
 {
-    /*
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    */
-
+    
     /**
-     * Display a listing of the agpplgroups.
+     * Display a listing of the agcourses.
      *
      * @return Illuminate\View\View
      */
     public function index()
     {
-        //$agpplgroups = Agpplgroup::paginate(25);
-        $agpplgroups = Agpplgroup::orderBy('name', 'asc')->paginate(25);
+        $agcourses = Agcourse::paginate(25);
 
-        return view('agpplgroup.index', compact('agpplgroups'));
+        return view('agcourse.index', compact('agcourses'));
     }
 
     /**
-     * Show the form for creating a new agpplgroup.
+     * Show the form for creating a new agcourse.
      *
      * @return Illuminate\View\View
      */
     public function create()
     {
-        return view('agpplgroup.create');
+        return view('agcourse.create');
     }
 
     /**
-     * Store a new agpplgroup in the storage.
+     * Store a new agcourse in the storage.
      *
      * @param Illuminate\Http\Request $request
      *
@@ -52,15 +45,15 @@ class AGPplGroupsController extends Controller
         $this->affirm($request);
         $data = $request->all();
         
-        Agpplgroup::create($data);
+        Agcourse::create($data);
 
-        Session::flash('success_message', 'Группа была добавлена!');
+        Session::flash('success_message', 'Agcourse was added!');
 
-        return redirect()->route('agpplgroup.agpplgroup.index');
+        return redirect()->route('agcourse.agcourse.index');
     }
 
     /**
-     * Display the specified agpplgroup.
+     * Display the specified agcourse.
      *
      * @param  int $id
      *
@@ -68,13 +61,13 @@ class AGPplGroupsController extends Controller
      */
     public function show($id)
     {
-        $agpplgroup = Agpplgroup::findOrFail($id);
+        $agcourse = Agcourse::findOrFail($id);
 
-        return view('agpplgroup.show', compact('agpplgroup'));
+        return view('agcourse.show', compact('agcourse'));
     }
 
     /**
-     * Show the form for editing the specified agpplgroup.
+     * Show the form for editing the specified agcourse.
      *
      * @param  int $id
      *
@@ -82,13 +75,13 @@ class AGPplGroupsController extends Controller
      */
     public function edit($id)
     {
-        $agpplgroup = Agpplgroup::findOrFail($id);
+        $agcourse = Agcourse::findOrFail($id);
 
-        return view('agpplgroup.edit', compact('agpplgroup'));
+        return view('agcourse.edit', compact('agcourse'));
     }
 
     /**
-     * Update the specified agpplgroup in the storage.
+     * Update the specified agcourse in the storage.
      *
      * @param  int $id
      * @param Illuminate\Http\Request $request
@@ -98,18 +91,18 @@ class AGPplGroupsController extends Controller
     public function update($id, Request $request)
     {
         $this->affirm($request);
-        $agpplgroup = Agpplgroup::findOrFail($id);
+        $agcourse = Agcourse::findOrFail($id);
         $data = $request->all();
         
-        $agpplgroup->update($data);
+        $agcourse->update($data);
 
-        Session::flash('success_message', 'Группа успешно отредактирована!');
+        Session::flash('success_message', 'Agcourse was updated!');
 
-        return redirect()->route('agpplgroup.agpplgroup.index');
+        return redirect()->route('agcourse.agcourse.index');
     }
 
     /**
-     * Remove the specified agpplgroup from the storage.
+     * Remove the specified agcourse from the storage.
      *
      * @param  int $id
      *
@@ -117,11 +110,11 @@ class AGPplGroupsController extends Controller
      */
     public function destroy($id)
     {
-        Agpplgroup::destroy($id);
+        Agcourse::destroy($id);
 
-        Session::flash('success_message', 'Группа удалена!');
+        Session::flash('success_message', 'Agcourse was deleted!');
 
-        return redirect()->route('agpplgroup.agpplgroup.index');
+        return redirect()->route('agcourse.agcourse.index');
     }
 
     /**
@@ -134,8 +127,11 @@ class AGPplGroupsController extends Controller
     protected function affirm(Request $request)
     {
         return $this->validate($request, [
-            'Code' => 'max:10',
+            'ShortName' => 'max:100',
             'Name' => 'max:200',
+            'googleDocID' => 'max:50',
+            'TOCJSON' => 'max:20000|json',
+            'Code' => 'max:10',
                 
         ]);
 

@@ -50,7 +50,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$menuPoint['text']}} <span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             @foreach ($menuPoint['dropdown'] as $subMenuPoint)
-                                                <li><a href="{{ isset($subMenuPoint['routeName']) ? route($subMenuPoint['routeName'])  : $subMenuPoint['href']}}">{{$subMenuPoint['text']}}</a></li>
+                                                <li><a href="{{ isset($subMenuPoint['routeName']) ? route($subMenuPoint['routeName'], ['a' => "f"])  : $subMenuPoint['href']}}">{{$subMenuPoint['text']}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
